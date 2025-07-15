@@ -60,7 +60,7 @@ body {
 
 .gif-placeholder {
     width: 100%;
-    height: 400px;
+    height: 70vh;
     background: linear-gradient(135deg, #2c3e50, #34495e, #2c3e50);
     border: 3px dashed #FFD700;
     border-radius: 15px;
@@ -181,7 +181,7 @@ body {
 .marquee-text {
     display: inline-block;
     animation: marquee 15s linear infinite;
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     font-weight: bold;
     color: #fff;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
@@ -219,9 +219,9 @@ body {
 .cta-button {
     background: linear-gradient(45deg, #FF6B35, #F7931E, #FFD700);
     border: none;
-    padding: 18px 40px;
+    padding: 20px 45px;
     border-radius: 50px;
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     font-weight: bold;
     color: #fff;
     cursor: pointer;
@@ -295,9 +295,7 @@ body {
         max-width: 150px;
     }
     
-    .gif-placeholder {
-        height: 300px;
-    }
+
     
     .gif-icon {
         font-size: 3rem;
@@ -316,14 +314,14 @@ body {
     }
     
     .marquee-text {
-        font-size: 1rem;
+        font-size: 1.3rem;
     }
     
-
+ 
     
     .cta-button {
-        padding: 15px 30px;
-        font-size: 1.2rem;
+        padding: 18px 35px;
+        font-size: 1.5rem;
     }
 }
 
@@ -332,9 +330,7 @@ body {
         max-width: 120px;
     }
     
-    .gif-placeholder {
-        height: 250px;
-    }
+
     
     .gif-icon {
         font-size: 2.5rem;
@@ -353,14 +349,14 @@ body {
     }
     
     .marquee-text {
-        font-size: 0.9rem;
+        font-size: 1.1rem;
     }
     
-
+ 
     
     .cta-button {
-        padding: 12px 25px;
-        font-size: 1.1rem;
+        padding: 15px 30px;
+        font-size: 1.3rem;
     }
     
 
