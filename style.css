@@ -1,0 +1,367 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+    color: #fff;
+    overflow-x: hidden;
+    position: relative;
+    min-height: 100vh;
+}
+
+
+
+/* 主要容器 */
+.main-container {
+    position: relative;
+    z-index: 1;
+    padding: 20px;
+    max-width: 768px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Logo區域 */
+.logo-section {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-top: 20px;
+}
+
+.logo {
+    display: inline-block;
+    animation: logoGlow 2s ease-in-out infinite alternate;
+}
+
+.logo-img {
+    max-width: 200px;
+    height: auto;
+    filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.5));
+}
+
+@keyframes logoGlow {
+    0% {
+        filter: drop-shadow(0 0 10px #FFD700);
+    }
+    100% {
+        filter: drop-shadow(0 0 30px #FF6347);
+    }
+}
+
+/* GIF提示區域 */
+.gif-placeholder-section {
+    margin: 30px 0;
+    width: 100%;
+}
+
+.gif-placeholder {
+    width: 100%;
+    height: 400px;
+    background: linear-gradient(135deg, #2c3e50, #34495e, #2c3e50);
+    border: 3px dashed #FFD700;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    animation: placeholderPulse 3s ease-in-out infinite;
+}
+
+.gif-placeholder::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.1), transparent);
+    animation: placeholderShine 2s infinite;
+}
+
+@keyframes placeholderPulse {
+    0%, 100% {
+        border-color: #FFD700;
+        box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+    }
+    50% {
+        border-color: #FF6B35;
+        box-shadow: 0 0 30px rgba(255, 107, 53, 0.4);
+    }
+}
+
+@keyframes placeholderShine {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+.gif-placeholder-content {
+    text-align: center;
+    color: #fff;
+    z-index: 1;
+}
+
+.gif-icon {
+    font-size: 4rem;
+    margin-bottom: 15px;
+    animation: iconBounce 2s ease-in-out infinite;
+}
+
+@keyframes iconBounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.gif-text {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #FFD700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+.gif-resolution {
+    font-size: 1.1rem;
+    color: #FF6B35;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.gif-note {
+    font-size: 0.9rem;
+    color: #bdc3c7;
+    font-style: italic;
+}
+
+/* 優惠跑馬燈 */
+.promotion-banner {
+    background: linear-gradient(90deg, #FF6B35, #F7931E, #FFD700, #F7931E, #FF6B35);
+    background-size: 200% 100%;
+    animation: gradientShift 3s ease infinite;
+    padding: 15px 0;
+    margin: 20px 0;
+    border-radius: 25px;
+    box-shadow: 0 5px 20px rgba(255, 107, 53, 0.4);
+    overflow: hidden;
+    position: relative;
+}
+
+.promotion-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    animation: shine 2s infinite;
+}
+
+@keyframes shine {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.marquee-container {
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.marquee-text {
+    display: inline-block;
+    animation: marquee 15s linear infinite;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+@keyframes marquee {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+.promo-item {
+    margin: 0 20px;
+    animation: textGlow 2s ease-in-out infinite alternate;
+}
+
+.promo-separator {
+    margin: 0 15px;
+    font-size: 1.5rem;
+    color: #FFD700;
+}
+
+@keyframes textGlow {
+    0% { text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); }
+    100% { text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7), 0 0 15px rgba(255, 255, 255, 0.8); }
+}
+
+
+
+/* CTA按鈕 */
+.cta-section {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.cta-button {
+    background: linear-gradient(45deg, #FF6B35, #F7931E, #FFD700);
+    border: none;
+    padding: 18px 40px;
+    border-radius: 50px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    animation: pulse 2s infinite;
+}
+
+.cta-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: left 0.5s;
+}
+
+.cta-button:hover::before {
+    left: 100%;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 12px 35px rgba(255, 107, 53, 0.6);
+}
+
+.cta-button:active {
+    transform: translateY(0) scale(0.98);
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
+    }
+    50% {
+        box-shadow: 0 8px 25px rgba(255, 107, 53, 0.8), 0 0 30px rgba(255, 215, 0, 0.3);
+    }
+    100% {
+        box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
+    }
+}
+
+.cta-text {
+    margin-right: 10px;
+}
+
+.cta-arrow {
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.cta-button:hover .cta-arrow {
+    transform: translateX(5px);
+}
+
+
+
+/* 手機響應式設計 */
+@media (max-width: 768px) {
+    .main-container {
+        padding: 15px;
+        max-width: 100%;
+    }
+    
+    .logo-img {
+        max-width: 150px;
+    }
+    
+    .gif-placeholder {
+        height: 300px;
+    }
+    
+    .gif-icon {
+        font-size: 3rem;
+    }
+    
+    .gif-text {
+        font-size: 1.5rem;
+    }
+    
+    .gif-resolution {
+        font-size: 1rem;
+    }
+    
+    .gif-note {
+        font-size: 0.8rem;
+    }
+    
+    .marquee-text {
+        font-size: 1rem;
+    }
+    
+
+    
+    .cta-button {
+        padding: 15px 30px;
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-img {
+        max-width: 120px;
+    }
+    
+    .gif-placeholder {
+        height: 250px;
+    }
+    
+    .gif-icon {
+        font-size: 2.5rem;
+    }
+    
+    .gif-text {
+        font-size: 1.2rem;
+    }
+    
+    .gif-resolution {
+        font-size: 0.9rem;
+    }
+    
+    .gif-note {
+        font-size: 0.7rem;
+    }
+    
+    .marquee-text {
+        font-size: 0.9rem;
+    }
+    
+
+    
+    .cta-button {
+        padding: 12px 25px;
+        font-size: 1.1rem;
+    }
+    
+
+}
