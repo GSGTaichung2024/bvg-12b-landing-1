@@ -15,12 +15,17 @@ function trackEvent(eventName, eventCategory = 'Landing Page', eventLabel = '') 
 
 // 追蹤事件並跳轉到目標網址
 function trackAndRedirect(eventName) {
-    const targetUrl = 'https://nova88link.com/nvbvg88-2/';
+    const targetUrl = 'https://goto.12Bix24.com/join/74710/th/fblanding2/index.html';
     
     // 追蹤 GA 事件
     trackEvent(eventName, 'Click', 'Casino Landing');
     
-    // 延遲跳轉以確保 GA 事件被記錄
+    // 追蹤 Facebook Pixel 事件
+    if (typeof fbq !== 'undefined') {
+        fbq('track', 'Lead');
+    }
+    
+    // 延遲跳轉以確保事件被記錄
     setTimeout(() => {
         window.open(targetUrl, '_blank');
     }, 100);
