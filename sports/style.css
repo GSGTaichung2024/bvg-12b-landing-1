@@ -19,17 +19,14 @@ body {
 .main-container {
     position: relative;
     z-index: 1;
-    padding: 20px;
     max-width: 768px;
-    margin: 0 auto;
+    margin: 10px auto 0 auto;
     width: 100%;
 }
 
 /* Logo區域 */
 .logo-section {
     text-align: center;
-    margin-bottom: 30px;
-    padding-top: 20px;
 }
 
 .logo {
@@ -57,95 +54,33 @@ body {
     0% {
         filter: drop-shadow(0 0 10px #FF0000);
     }
+
     100% {
         filter: drop-shadow(0 0 30px #CC0000);
     }
 }
 
-/* GIF提示區域 */
-.gif-placeholder-section {
-    margin: 30px 0;
+/* GIF區域 */
+.gif-section {
+    margin: 10px 0;
     width: 100%;
-}
-
-.gif-placeholder {
-    width: 100%;
-    height: 70vh;
-    background: linear-gradient(135deg, #1a0000, #330000, #1a0000);
-    border: 3px dashed #FF0000;
-    border-radius: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
-    animation: placeholderPulse 3s ease-in-out infinite;
-}
-
-.gif-placeholder::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 0, 0, 0.1), transparent);
-    animation: placeholderShine 2s infinite;
-}
-
-@keyframes placeholderPulse {
-    0%, 100% {
-        border-color: #FF0000;
-        box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
-    }
-    50% {
-        border-color: #CC0000;
-        box-shadow: 0 0 30px rgba(204, 0, 0, 0.4);
-    }
-}
-
-@keyframes placeholderShine {
-    0% { left: -100%; }
-    100% { left: 100%; }
-}
-
-.gif-placeholder-content {
     text-align: center;
-    color: #fff;
-    z-index: 1;
 }
 
-.gif-icon {
-    font-size: 4rem;
-    margin-bottom: 15px;
-    animation: iconBounce 2s ease-in-out infinite;
+.gif-image {
+    width: 100%;
+    max-width: 414px;
+    height: auto;
+    max-height: 420px;
+    object-fit: cover;
+    object-position: center center;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
 }
 
-@keyframes iconBounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-}
-
-.gif-text {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #FF0000;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-    margin-bottom: 10px;
-    letter-spacing: 2px;
-}
-
-.gif-resolution {
-    font-size: 1.1rem;
-    color: #CC0000;
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-.gif-note {
-    font-size: 0.9rem;
-    color: #bdc3c7;
-    font-style: italic;
+.gif-image:hover {
+    transform: scale(1.02);
 }
 
 /* 優惠跑馬燈 */
@@ -153,8 +88,8 @@ body {
     background: linear-gradient(90deg, #FF0000, #CC0000, #990000, #CC0000, #FF0000);
     background-size: 200% 100%;
     animation: gradientShift 3s ease infinite;
-    padding: 15px 0;
-    margin: 20px 0;
+    padding: 10px 0;
+    margin: 10px 0;
     border-radius: 25px;
     box-shadow: 0 5px 20px rgba(255, 0, 0, 0.4);
     overflow: hidden;
@@ -173,14 +108,27 @@ body {
 }
 
 @keyframes shine {
-    0% { left: -100%; }
-    100% { left: 100%; }
+    0% {
+        left: -100%;
+    }
+
+    100% {
+        left: 100%;
+    }
 }
 
 @keyframes gradientShift {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 .marquee-container {
@@ -198,8 +146,13 @@ body {
 }
 
 @keyframes marquee {
-    0% { transform: translateX(100%); }
-    100% { transform: translateX(-100%); }
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
 }
 
 .promo-item {
@@ -214,8 +167,13 @@ body {
 }
 
 @keyframes textGlow {
-    0% { text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); }
-    100% { text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7), 0 0 15px rgba(255, 255, 255, 0.8); }
+    0% {
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    }
+
+    100% {
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7), 0 0 15px rgba(255, 255, 255, 0.8);
+    }
 }
 
 
@@ -223,13 +181,12 @@ body {
 /* CTA按鈕 */
 .cta-section {
     text-align: center;
-    margin: 40px 0;
 }
 
 .cta-button {
     background: linear-gradient(45deg, #FF0000, #CC0000, #990000);
     border: none;
-    padding: 20px 45px;
+    padding: 0px;
     border-radius: 50px;
     font-size: 1.8rem;
     font-weight: bold;
@@ -271,9 +228,11 @@ body {
     0% {
         box-shadow: 0 8px 25px rgba(255, 0, 0, 0.4);
     }
+
     50% {
         box-shadow: 0 8px 25px rgba(255, 0, 0, 0.8), 0 0 30px rgba(204, 0, 0, 0.3);
     }
+
     100% {
         box-shadow: 0 8px 25px rgba(255, 0, 0, 0.4);
     }
@@ -297,44 +256,35 @@ body {
 /* 手機響應式設計 */
 @media (max-width: 768px) {
     .main-container {
-        padding: 15px;
         max-width: 100%;
     }
-    
+
     .logo-12bet {
         max-width: 200px;
     }
-    
+
     .logo-saba {
         max-width: 120px;
     }
-    
 
-    
-    .gif-icon {
-        font-size: 3rem;
+    .gif-image {
+        max-width: 90%;
     }
-    
-    .gif-text {
-        font-size: 1.5rem;
-    }
-    
-    .gif-resolution {
-        font-size: 1rem;
-    }
-    
-    .gif-note {
-        font-size: 0.8rem;
-    }
-    
+
     .marquee-text {
         font-size: 1.3rem;
     }
-    
- 
-    
+
+    .promo-item {
+        margin: 0 8px;
+    }
+
+    .promo-separator {
+        margin: 0 6px;
+    }
+
     .cta-button {
-        padding: 18px 35px;
+        padding: 18px;
         font-size: 1.5rem;
     }
 }
@@ -343,39 +293,29 @@ body {
     .logo-12bet {
         max-width: 160px;
     }
-    
+
     .logo-saba {
         max-width: 100px;
     }
-    
 
-    
-    .gif-icon {
-        font-size: 2.5rem;
+    .gif-image {
+        max-width: 95%;
     }
-    
-    .gif-text {
-        font-size: 1.2rem;
-    }
-    
-    .gif-resolution {
-        font-size: 0.9rem;
-    }
-    
-    .gif-note {
-        font-size: 0.7rem;
-    }
-    
+
     .marquee-text {
         font-size: 1.1rem;
     }
-    
- 
-    
+
+    .promo-item {
+        margin: 0 6px;
+    }
+
+    .promo-separator {
+        margin: 0 4px;
+    }
+
     .cta-button {
-        padding: 15px 30px;
+        padding: 10px;
         font-size: 1.3rem;
     }
-    
-
 }

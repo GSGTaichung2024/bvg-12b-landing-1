@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const marqueeText = document.querySelector('.marquee-text');
     if (marqueeText) {
         const textLength = marqueeText.textContent.length;
-        const baseSpeed = 15; // 基礎速度（秒）
+        const baseSpeed = 5; // 基礎速度（秒）
         const adjustedSpeed = Math.max(10, baseSpeed * (textLength / 100));
         marqueeText.style.animationDuration = `${adjustedSpeed}s`;
     }

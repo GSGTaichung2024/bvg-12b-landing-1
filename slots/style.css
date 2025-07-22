@@ -19,17 +19,14 @@ body {
 .main-container {
     position: relative;
     z-index: 1;
-    padding: 20px;
     max-width: 768px;
-    margin: 0 auto;
+    margin: 10px auto 0 auto;
     width: 100%;
 }
 
 /* Logo區域 */
 .logo-section {
     text-align: center;
-    margin-bottom: 30px;
-    padding-top: 20px;
 }
 
 .logo {
@@ -52,90 +49,27 @@ body {
     }
 }
 
-/* GIF提示區域 */
-.gif-placeholder-section {
-    margin: 30px 0;
+/* GIF區域 */
+.gif-section {
+    margin: 10px 0;
     width: 100%;
-}
-
-.gif-placeholder {
-    width: 100%;
-    height: 70vh;
-    background: linear-gradient(135deg, #2c3e50, #34495e, #2c3e50);
-    border: 3px dashed #FFD700;
-    border-radius: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
-    animation: placeholderPulse 3s ease-in-out infinite;
-}
-
-.gif-placeholder::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.1), transparent);
-    animation: placeholderShine 2s infinite;
-}
-
-@keyframes placeholderPulse {
-    0%, 100% {
-        border-color: #FFD700;
-        box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
-    }
-    50% {
-        border-color: #FF6B35;
-        box-shadow: 0 0 30px rgba(255, 107, 53, 0.4);
-    }
-}
-
-@keyframes placeholderShine {
-    0% { left: -100%; }
-    100% { left: 100%; }
-}
-
-.gif-placeholder-content {
     text-align: center;
-    color: #fff;
-    z-index: 1;
 }
 
-.gif-icon {
-    font-size: 4rem;
-    margin-bottom: 15px;
-    animation: iconBounce 2s ease-in-out infinite;
+.gif-image {
+    width: 100%;
+    max-width: 414px;
+    height: auto;
+    max-height: 420px;
+    object-fit: cover;
+    object-position: top center;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
 }
 
-@keyframes iconBounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-}
-
-.gif-text {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #FFD700;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-    margin-bottom: 10px;
-    letter-spacing: 2px;
-}
-
-.gif-resolution {
-    font-size: 1.1rem;
-    color: #FF6B35;
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-.gif-note {
-    font-size: 0.9rem;
-    color: #bdc3c7;
-    font-style: italic;
+.gif-image:hover {
+    transform: scale(1.02);
 }
 
 /* 優惠跑馬燈 */
@@ -143,8 +77,8 @@ body {
     background: linear-gradient(90deg, #FF6B35, #F7931E, #FFD700, #F7931E, #FF6B35);
     background-size: 200% 100%;
     animation: gradientShift 3s ease infinite;
-    padding: 15px 0;
-    margin: 20px 0;
+    padding: 10px 0;
+    margin: 10px 0;
     border-radius: 25px;
     box-shadow: 0 5px 20px rgba(255, 107, 53, 0.4);
     overflow: hidden;
@@ -188,17 +122,17 @@ body {
 }
 
 @keyframes marquee {
-    0% { transform: translateX(100%); }
-    100% { transform: translateX(-100%); }
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-50%); }
 }
 
 .promo-item {
-    margin: 0 20px;
+    margin: 0 10px;
     animation: textGlow 2s ease-in-out infinite alternate;
 }
 
 .promo-separator {
-    margin: 0 15px;
+    margin: 0 8px;
     font-size: 1.5rem;
     color: #FFD700;
 }
@@ -213,13 +147,12 @@ body {
 /* CTA按鈕 */
 .cta-section {
     text-align: center;
-    margin: 40px 0;
 }
 
 .cta-button {
     background: linear-gradient(45deg, #FF6B35, #F7931E, #FFD700);
     border: none;
-    padding: 20px 45px;
+    padding: 10px;
     border-radius: 50px;
     font-size: 1.8rem;
     font-weight: bold;
@@ -287,7 +220,6 @@ body {
 /* 手機響應式設計 */
 @media (max-width: 768px) {
     .main-container {
-        padding: 15px;
         max-width: 100%;
     }
     
@@ -297,20 +229,8 @@ body {
     
 
     
-    .gif-icon {
-        font-size: 3rem;
-    }
-    
-    .gif-text {
-        font-size: 1.5rem;
-    }
-    
-    .gif-resolution {
-        font-size: 1rem;
-    }
-    
-    .gif-note {
-        font-size: 0.8rem;
+    .gif-image {
+        max-width: 90%;
     }
     
     .marquee-text {
@@ -320,7 +240,6 @@ body {
  
     
     .cta-button {
-        padding: 18px 35px;
         font-size: 1.5rem;
     }
 }
@@ -330,24 +249,6 @@ body {
         max-width: 120px;
     }
     
-
-    
-    .gif-icon {
-        font-size: 2.5rem;
-    }
-    
-    .gif-text {
-        font-size: 1.2rem;
-    }
-    
-    .gif-resolution {
-        font-size: 0.9rem;
-    }
-    
-    .gif-note {
-        font-size: 0.7rem;
-    }
-    
     .marquee-text {
         font-size: 1.1rem;
     }
@@ -355,7 +256,6 @@ body {
  
     
     .cta-button {
-        padding: 15px 30px;
         font-size: 1.3rem;
     }
     
